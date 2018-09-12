@@ -1,25 +1,41 @@
 Sass
-* 概要
+# 概要
 - CSSを効率的に書くための記法
 - 2つの記法
 -- .sass (Ruby/Haml)
 -- .sass (CSS3)
 
-* 知識
+# 知識
 - HTML/CSS/CSS3
 
 * 手順 (ターミナル）
 - ruby -v
 - sudo gem update --system
 - sudo gem install sass
-- もしエラーが出てしまったら
-- brew update
-- brew ins
-- brew install git rbenv ruby-build //gitとrbenvとruby-buildをインストール
-- echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
-- source ~/.bash_profile
-- export PATH=“$HOME/.rbenv/bin:$PATH”
-- source ~/.zshrc
+- もしエラーが出てしまったらインストールの場所を変更する
+- sudo gem install sass -n /usr/local/bin/
 
-* 手順
-- .s
+# .sass -> sass -> .css　への変更手順 (ターミナル)
+- sass scss/main.scss:css/main.css
+
+# 自動で変換させる
+- sass --style expanded --watch scss:css
+
+# 入れ子構造を使用する
+<style type="text/css">
+    #main {
+        width: 90%;
+    p {
+        font-size: 16px;
+    }
+    a {
+        text-decoration: none;
+    &:hover {
+         font-weight: bold;
+     }
+    }
+    }
+</style>
+
+# 変数を使用する
+- データ型（数値、文字列、真偽、色、リスト）

@@ -1,6 +1,45 @@
+@charset "UTF-8";
+/* comment */
+/*　基本的な形　*/
 #main {
-    width: 90%;
-    p {
-        font-size: 14px;
-    }
+  width: 90%;
 }
+#main p {
+  font-size: 16px;
+}
+#main a {
+  text-decoration: none;
+}
+#main a:hover {
+  font-weight: bold;
+}
+
+/*　変数を使用する（数値）　*/
+#main {
+  width: 90%;
+}
+#main p {
+  font-size: 14px;
+}
+#main a {
+  text-decoration: none;
+}
+#main a:hover {
+  font-weight: bold;
+}
+
+/*　変数を使用する　*/
+#main {
+  width: 90%;
+}
+#main p {
+  font-size: 14px;
+}
+#main a {
+  text-decoration: none;
+}
+#main a:hover {
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=main.css.map */
