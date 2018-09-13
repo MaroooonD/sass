@@ -18,10 +18,15 @@ Sass
 # .sass -> sass -> .css　への変更手順 (ターミナル)
 - sass scss/main.scss:css/main.css
 
+# ファイル内容の確認方法（ターミナル）
+- less css/main.css
+- ctr + Z で元に戻る
+
 # 自動で変換させる
 - sass --style expanded --watch scss:css
 
 # 入れ子構造を使用する
+<!--
 <style type="text/css">
     #main {
         width: 90%;
@@ -36,6 +41,24 @@ Sass
     }
     }
 </style>
+-->
 
 # 変数を使用する
 - データ型（数値、文字列、真偽、色、リスト）
+
+# ここからは目次（scss/main.scssに詳細を記載）
+- 基本的な形
+- 変数を使用する
+- 変数を使用して計算する
+- 変数で文字列を使用する
+- 色を扱ってみよう
+- 色の明度を調節する機能 lighten darken
+    - sass built-in functionsで検索すると色、文字列、RGBに関するものがある
+    - http://sass-lang.com/documentation/Sass/Script/Functions.html
+- @if文を使用した条件分岐
+- @for @while文を使用しよう
+- リストを扱ってみよう
+- 関数を使用しよう
+- ファイルを分離させてみよう
+- @mixinを使用する
+- @extenfを使用する

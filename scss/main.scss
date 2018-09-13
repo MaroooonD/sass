@@ -1,49 +1,216 @@
 /* comment */
 // comment  変換後反映されない
 
-/*　基本的な形　*/
-#main {
-  width: 90%;
-  p {
-    font-size: 16px;
-  }
-  a {
-    text-decoration: none;
-    &:hover {
-      font-weight: bold;
-    }
-  }
-}
+///*　基本的な形　*/
+//#main {
+//  width: 90%;
+//  p {
+//    font-size: 16px;
+//  }
+//  a {
+//    text-decoration: none;
+//    &:hover {
+//      font-weight: bold;
+//    }
+//  }
+//}
 
 
-/*　変数を使用する（数値）　*/
-$baseFontSiza: 14px;
+///*　変数を使用する（数値）　*/
+//$baseFontSiza: 14px;
+//
+//#main {
+//  width: 90%;
+//  p {
+//    font-size: $baseFontSiza;
+//  }
+//  a {
+//    text-decoration: none;
+//    &:hover {
+//      font-weight: bold;
+//    }
+//  }
+//}
 
-#main {
-  width: 90%;
-  p {
-    font-size: $baseFontSiza;
-  }
-  a {
-    text-decoration: none;
-    &:hover {
-      font-weight: bold;
-    }
-  }
-}
+///*　変数を使用する　*/
+//$baseFontSiza: 14px;
+//
+//#main {
+//  width: 90%;
+//  p {
+//    font-size: $baseFontSiza;
+//  }
+//  a {
+//    text-decoration: none;
+//    &:hover {
+//      font-weight: bold;
+//    }
+//  }
+//}
 
-/*　変数を使用する　*/
-$baseFontSiza: 14px;
+///*　変数を使用して計算する　*/
+//$baseFontSiza: 14px;
+//
+//#main {
+//  width: 90%;
+//  p {
+//    font-size: $baseFontSiza;
+//    .sub {
+//      font-size: $baseFontSiza - 2px;
+//    }
+//  }
+//}
 
-#main {
-  width: 90%;
-  p {
-    font-size: $baseFontSiza;
-  }
-  a {
-    text-decoration: none;
-    &:hover {
-      font-weight: bold;
-    }
-  }
-}
+///* 変数で文字列を使用する */
+//$imgDir: "../img/";
+//
+//#main {
+//  width: 90%;
+//  background: url($imgDir + "bg.png");
+//  // background: url("#($imgDir)bg.png"); とも書ける
+//  p {
+//    font-size: #{12 + 12}px;
+//  }
+//}
+
+///* 色を扱ってみよう */
+//$brandColor: rgba(255,0,0,0.9);
+//
+//#main {
+//  width: 90%;
+//  p {
+//    color: $brandColor;
+//    //font-size: 14px;
+//  }
+//}
+
+///* 色の明度を調節する機能 lighten darken */
+//$brandColor: rgba(255,0,0,0.9);
+//
+//#main {
+//  width: 90%;
+//  p {
+//    color: lighten($brandColor, 30%);
+//    font-size: 14px;
+//  }
+//}
+
+///* @if文を使用した条件分岐 */
+//$debugMode: true;
+//$x: 10;
+//
+//#main {
+//  @if $debugMode == true {
+//    color: red;
+//  } @else {
+//    color: green;
+//  }
+//  p {
+//    @if $x > 20 { color: yellow; }
+//  }
+//}
+
+///* @for @while 文を使用しよう */
+//@for $i from 10 through 14 {
+//  .fs#{$i} { font-size: #{$i}px}
+//}
+//
+//$i: 10;
+//@while $i <= 14 {
+//  .fs#{$i} { font-size: #{$i}px}
+//  $i: $i + 1;
+//}
+
+///*  リストを扱ってみよう */
+//$animals: cat, dog, tiger;
+//
+//@each $animal in $animals {
+//  .cat-icon {
+//  .#{$animal}-icon { background: url("#{$animal}.png"); }
+//  }
+//}
+//
+//// ちなみに以下の方法でも同様の結果が出る
+//@each $animal in cat, dog, tiger {
+//  .cat-icon {
+//    .#{$animal}-icon { background: url("#{$animal}.png"); }
+//  }
+//}
+
+///* 関数を使用してみよう */
+//$totalWidth: 940px;
+//$columnCount: 10;
+//
+//@function getColumnWidth($width,$count) {
+//  // $columnWidth を計算
+//  $padding: 10px;
+//  $columnWidth: floor(($width - ($padding * ($count - 1))) / $count);
+//  @debug $columnWidth;
+//  @return $columnWidth;
+//}
+//.grid {
+//  float: left;
+//  width: getColumnWidth($totalWidth, $columnCount);
+//}
+
+///* ファイルを分離させてみよう */
+//// 上記の関数を_settings.scssと_functions.scssに分離する
+//@import "settings";
+//@import "functions";
+//
+//.grid {
+//  float: left;
+//  width: getColumnWidth($totalWidth, $columnCount);
+//}
+
+///* @mixinを使用する */
+//@mixin round {
+//  border-radius: 4px;
+//}
+//
+//.labal {
+//  font-size: 12px;
+//  @include round;
+//}
+//
+//// mixinは引数をもつことができる
+//@mixin round( $radius:4px ) {
+//  border-radius: $radius;
+//}
+//
+//.labal {
+//  font-size: 12px;
+//  @include round(5px);
+//}
+
+/* @extend （継承）を使ってみよう */
+// 例えばこのようなエラーメッセージで被っている項目があるときに
+//.errorMsg {
+//  font-size: 12px;
+//  font-weight: bold;
+//  padding: 2px, 4px;
+//  background: red;
+//  color: white;
+//}
+//.warningMsg {
+//  font-size: 12px;
+//  font-weight: bold;
+//  padding: 2px, 4px;
+//  background: orange;
+//  color: white;
+//}
+
+//.msg {
+//  font-size: 12px;
+//  font-weight: bold;
+//  padding: 2px, 4px;
+//  color: white;
+//}
+//.errorMsg {
+//  @extend .msg;
+//  background: red;
+//}
+//.warningMsg {
+//  @extend .msg;
+//  background: orange;
+//}
